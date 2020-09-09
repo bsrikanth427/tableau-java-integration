@@ -22,7 +22,7 @@ public class TableauController {
 	private Logger log = LoggerFactory.getLogger(TableauController.class);
 	
 	@GetMapping("/dashboard")
-	public String dashboard(@RequestParam(name="username", required=false, defaultValue="evoke") String name, Model model) {
+	public String dashboard(@RequestParam(name="username", required=false, defaultValue="testUser") String name, Model model) {
 		
 		OutputStreamWriter out = null;
 		BufferedReader in = null;
@@ -31,7 +31,7 @@ public class TableauController {
 			StringBuffer data = new StringBuffer();
 			data.append(URLEncoder.encode("username", "UTF-8"));
 			data.append("=");
-			String user = "evoke";
+			String user = "testUser";
 			data.append(URLEncoder.encode(user, "UTF-8"));
 
 			// Send the request
